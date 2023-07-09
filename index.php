@@ -4,27 +4,31 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>API - Prubebas</title>
+   <title>API - Pruebas</title>
    <link rel="stylesheet" href="assets/styles.css" type="text/css">
+   <style>
+      .required {
+         color: red;
+      }
+   </style>
 </head>
 
 <body>
 
    <div class="container">
-      <h1>Api de pruebas</h1>
+      <h1>API de Pruebas</h1>
       <div class="divbody">
-         <h3>Auth - login</h3>
+         <h3>Auth - Login</h3>
          <code>
             POST /auth
             <br>
             {
             <br>
-            "usuario" :"", -> REQUERIDO
+            "usuario": "<span class="required">->REQUERIDO</span>",
             <br>
-            "password": "" -> REQUERIDO
+            "password": "<span class="required">->REQUERIDO</span>"
             <br>
             }
-
          </code>
       </div>
       <div class="divbody">
@@ -34,76 +38,70 @@
             <br>
             GET /pacientes?id=$idPaciente
          </code>
-         <br />
+         <br>
          <code>
             POST /pacientes
             <br>
             {
             <br>
-            "nombre" : "", -> REQUERIDO
+            "nombre": "<span class="required">->REQUERIDO</span>",
             <br>
-            "dni" : "", -> REQUERIDO
+            "dni": "<span class="required">->REQUERIDO</span>",
             <br>
-            "correo":"", -> REQUERIDO
+            "correo": "<span class="required">->REQUERIDO</span>",
             <br>
-            "codigoPostal" :"",
+            "codigoPostal": "",
             <br>
-            "genero" : "",
+            "genero": "",
             <br>
-            "telefono" : "",
+            "telefono": "",
             <br>
-            "fechaNacimiento" : "",
+            "fechaNacimiento": "",
             <br>
-            "token" : "" -> REQUERIDO
+            "token": "<span class="required">->REQUERIDO</span>"
             <br>
             }
-
          </code>
-         <br />
+         <br>
          <code>
             PUT /pacientes
             <br>
             {
             <br>
-            "nombre" : "",
+            "nombre": "",
             <br>
-            "dni" : "",
+            "dni": "",
             <br>
-            "correo":"",
+            "correo": "",
             <br>
-            "codigoPostal" :"",
+            "codigoPostal": "",
             <br>
-            "genero" : "",
+            "genero": "",
             <br>
-            "telefono" : "",
+            "telefono": "",
             <br>
-            "fechaNacimiento" : "",
+            "fechaNacimiento": "",
             <br>
-            "token" : "" , -> REQUERIDO
+            "token": "<span class="required">->REQUERIDO</span>",
             <br>
-            "pacienteId" : "" -> REQUERIDO
+            "pacienteId": "<span class="required">->REQUERIDO</span>"
             <br>
             }
-
          </code>
-         <br />
+         <br>
          <code>
             DELETE /pacientes
             <br>
             {
             <br>
-            "token" : "", -> REQUERIDO
+            "token": "<span class="required">->REQUERIDO</span>",
             <br>
-            "pacienteId" : "" -> REQUERIDO
+            "pacienteId": "<span class="required">->REQUERIDO</span>"
             <br>
             }
-
          </code>
       </div>
-
-
    </div>
-
 </body>
 
 </html>

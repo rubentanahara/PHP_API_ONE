@@ -41,7 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
    }
    echo json_encode($response);
 } else if ($_SERVER['REQUEST_METHOD'] === "DELETE") {
-   $postBody = file_get_contents("php://input");
+
+   $postBody  = null;
+   $headers = getallheaders();
+   if (isset($headers["token"]) && isset($headers["pacienteId"])) {
+      //recibimos los datos enviados por el header
+      $send = [
+         "token" => $headers["token"],
+         "pacienteId" => $headers["pacienteId"]
+      ];
+      $postBody = json_encode($send);
+   } else {
+      //recibimos los datos enviados
+      $postBody = file_get_contents("php://input");
+   }
+
    $response = $pacientes->Delete($postBody);
    if (isset($response["result"]["error_id"])) {
       $responseCode  = $response["result"]["error_id"];
